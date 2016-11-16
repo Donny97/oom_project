@@ -58,7 +58,7 @@ bg1.add(jRadioButton2);
         jRadioButton2 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("QUINTERN - Get a quick Intern");
+        setTitle("QUINTERN - Get a Quick Intern");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -265,6 +265,8 @@ bg1.add(jRadioButton2);
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        getAccessibleContext().setAccessibleDescription("hi");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -330,4 +332,4 @@ bg1.add(jRadioButton2);
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-
+}
