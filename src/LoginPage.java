@@ -14,8 +14,9 @@ public class LoginPage extends javax.swing.JFrame {
      * Creates new form LoginPage
      */
     public LoginPage() {
-        groupButton();
         initComponents();
+        groupButton();
+        
     }
     private void groupButton( ) {
 
