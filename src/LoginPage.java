@@ -36,7 +36,6 @@ bg1.add(jRadioButton2);
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -58,6 +57,7 @@ bg1.add(jRadioButton2);
         jRadioButton2 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("QUINTERN - Get a Quick Intern");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -73,7 +73,7 @@ bg1.add(jRadioButton2);
 
         jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jayesh\\Documents\\NetBeansProjects\\Internship\\twitter.png")); // NOI18N
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jayesh\\Desktop\\google.png")); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jayesh\\Documents\\NetBeansProjects\\Internship\\google.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -308,7 +308,6 @@ bg1.add(jRadioButton2);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
