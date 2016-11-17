@@ -4,12 +4,18 @@
  * and open the template in the editor.
  */
 import javax.swing.ButtonGroup;
+import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+
 /**
  *
  * @author Jayesh
  */
 public class LoginPage extends javax.swing.JFrame {
-
+    
+   
+        
     /**
      * Creates new form LoginPage
      */
@@ -67,14 +73,7 @@ bg1.add(jRadioButton2);
         jLabel1.setFont(new java.awt.Font("Montserrat SemiBold", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jayesh\\Documents\\NetBeansProjects\\Internship\\logo.png")); // NOI18N
         jLabel1.setText("QUINTERN");
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jayesh\\Documents\\NetBeansProjects\\Internship\\fb.png")); // NOI18N
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jayesh\\Documents\\NetBeansProjects\\Internship\\twitter.png")); // NOI18N
-
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jayesh\\Documents\\NetBeansProjects\\Internship\\google.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -130,11 +129,14 @@ bg1.add(jRadioButton2);
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(230, 116, 106)));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jayesh\\Documents\\NetBeansProjects\\Internship\\am-a-19-year-old-multimedia-artist-student-from-manila--21.png")); // NOI18N
-
         jButton1.setBackground(new java.awt.Color(230, 116, 106));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("SIGN IN");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -176,6 +178,11 @@ bg1.add(jRadioButton2);
         jButton2.setBackground(new java.awt.Color(230, 116, 106));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("SIGN UP");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jRadioButton1.setText("Company");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -272,34 +279,42 @@ bg1.add(jRadioButton2);
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+        
+         Connection connect=null;
+         PreparedStatement pstat=null;
+         ResultSet rs=null;
+    
+         String dburl="jdbc:mysql://localhost:3306/Student Record";
+         String dbuser="root",dbpass="";
+        
+        try{
             
-        /* Create and display the form */
+            connect = DriverManager.getConnection(dburl,dbuser,dbpass);
+                if(connect!=null){
+                    
+                    System.out.println("Connected to the database: Student Record");
+                }
+        
+        }
+        
+        catch(Exception e){
+            
+            System.out.println("Unable to connect to the Database.");
+        
+        }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LoginPage().setVisible(true);
